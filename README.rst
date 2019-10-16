@@ -1,0 +1,63 @@
+Required ENV Settings/Vars
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+RedShift
+========
+
+- `REDSHIFT_PWD` 
+
+- `REDSHIFT_DSN` 
+
+- `REDSHIFT_USR`
+
+
+Facebook
+========
+
+- `FACEBOOK_APP_ID`
+
+- `FACEBOOK_ACCESS_TOKEN`
+
+- `FACEBOOK_APP_SECRET`
+
+- `FACEBOOK_APP_TOKEN`
+
+- `FACEBOOK_PG_TOKEN`
+
+- `FACEBOOK_LONG_ACCESS_TOKEN`
+
+
+Chaa jaa Facebook
+=================
+
+- `AD_ACCOUNT_ACCOUNTID`
+
+- `AD_ACCOUNT_ACCOUNTNAME`
+
+
+- `CHAA_JAA_ACCOUNTID`
+
+- `CHAA_JAA_ACCOUNTNAME`
+
+- `CHAA_JAA_CAMPAIGNID`
+
+- `CHAA_JAA_CAMPAIGNNAME`
+
+
+- `CHAA_JAA_PAGEID`
+
+- `CHAA_JAA_FACEBOOKPAGENAME`
+
+- `CHAA_JAA_GEPAGENAME`
+
+- `CHAA_JAA_PAGEAPP`
+
+- `CHAA_JAA_ACCESS_TOKEN`
+
+
+Chaa jaaa GA
+============
+
+- `CHAAJAAUSER_VIEW`
+
+- `CHAAJAAUSER_VIEWID`
