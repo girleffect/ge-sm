@@ -1,6 +1,7 @@
 import datetime
 import pandas as pd
 import shutil
+import os
 # from common.logger import write_to_log
 from ge_sm.facebook_code.data_creation.query_pages import construct_insight_data, get_fb_demo_data  # derive_dates
 from ge_sm.facebook_code.data_creation.query_posts import construct_post_data
@@ -14,8 +15,8 @@ from ge_sm.common.create_database_tables import upload_with_pandas, delete_all_d
 from ge_sm.control_details import reportlist
 
 # put in path name for secrets et al as running from batch file
-pathname = 'C:/Users/PaulDanousia/Dropbox (JumpData)/JumpData Team Folder/' \
-           '01_Clients/GirlEffect/Phase2Files/SM_Upload/'
+upload_dir = 'sm-upload'
+pathname = os.path.join(os.path.abspath(''), upload_dir)
 
 # from common.create_database_tables import update_monthly_table
 
