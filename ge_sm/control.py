@@ -84,7 +84,8 @@ def main(s, page_start, e):
             #     create_table_from_csv(data['tablename'], data['tablestructure'])
             # Copy old .csv files into same location to keep them for future checking
             csvlen = len(data['outputcsvloc']) - 4
-            shutil.copy2(pathname + data['outputcsvloc'], pathname +data['outputcsvloc'][:csvlen] + '_Old.csv')
+            if os.path.exists(pathname + data['outputcsvloc']):
+                shutil.copy2(pathname + data['outputcsvloc'], pathname +data['outputcsvloc'][:csvlen] + '_Old.csv')
             # # Delete all data from given table
             delete_all_data(data['tablename'])
             # temp thing to sort out FB page issue on 3 months
