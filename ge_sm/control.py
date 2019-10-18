@@ -15,7 +15,7 @@ from ge_sm.common.create_database_tables import upload_with_pandas, delete_all_d
 from ge_sm.control_details import reportlist
 
 # put in path name for secrets et al as running from batch file
-upload_dir = 'sm-upload'
+upload_dir = 'ge_sm/sm-upload'
 pathname = os.path.join(os.path.abspath(''), upload_dir)
 
 # from common.create_database_tables import update_monthly_table
@@ -98,6 +98,8 @@ def main(s, page_start, e):
                 olddata_df = olddata_df[olddata_df['Date'] < page_start]
                 df = pd.concat([olddata_df, df], ignore_index = True, sort = False)
             print(df.to_string())
+
+            os.walk(os.path.dirname(pathname + data['outputcsvloc']), topdown=True)
             # Export dataframe to csv
             df.to_csv(pathname + data['outputcsvloc'], index = False)
             # Upload to data platform
