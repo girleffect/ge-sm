@@ -28,7 +28,7 @@ class YoutubeAnalyticsAPI:
         # Set up a Flow object to be used if we need to authenticate.
         flow = client.flow_from_clientsecrets(self.secrets_path, scope = ' '.join(self.scopes),
                                               message=tools.message_if_missing(self.secrets_path))
-        storage = file.Storage(pathname + analyticsdat)
+        storage = file.Storage(pathname / analyticsdat)
         credentials = storage.get()
         if credentials is None or credentials.invalid: credentials = tools.run_flow(flow, storage, args)
         http = credentials.authorize(httplib2.Http())
