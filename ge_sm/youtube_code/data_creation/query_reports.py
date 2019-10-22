@@ -1,7 +1,7 @@
 import pandas as pd
 
 from ge_sm.youtube_code.settings.chaa_jaa_settings import channelsdict, std_metric_details as sm
-from ge_sm.youtube_code.api_code.youtube_analytics_api import YoutubeAnalyticsAPI, YoutubeAPI
+from ge_sm.youtube_code.api_code.youtube_analytics_api import YoutubeAnalqyticsAPI, YoutubeAPI
 
 #Not using this at present
 def get_allvideodetails(yt, channel):
@@ -53,7 +53,7 @@ def run_video_report(sd, ed):
         yta_dat = channel['analyticsdat']
         yt_dat = channel['youtubedat']
         yt = YoutubeAPI(youtubedat = yt_dat)
-        yta = YoutubeAnalyticsAPI(analyticsdat = yta_dat)
+        yta = YoutubeAnalqyticsAPI(analyticsdat = yta_dat)
         data_list = []
         #playlists = get_allplaylists(yt, id)
         #get all videos plus the names, id, urls
@@ -113,7 +113,7 @@ def run_channel_report(sd, ed):
         channel = channelsdict[id]
         #get name of anlaytics.dat file for this channel
         ytadat = channel['analyticsdat']
-        yta = YoutubeAnalyticsAPI(analyticsdat = ytadat)
+        yta = YoutubeAnalqyticsAPI(analyticsdat = ytadat)
         resp = get_report(yta, 'channel==' + id, sd, ed, stdmetrics, 'day')
         data_list = []
         # break down response object into parts that are required
@@ -149,7 +149,7 @@ def run_demo_report(sd, ed):
         channel = channelsdict[id]
         #get name of anlaytics.dat file for this channel
         ytadat = channel['analyticsdat']
-        yta = YoutubeAnalyticsAPI(analyticsdat=ytadat)
+        yta = YoutubeAnalqyticsAPI(analyticsdat=ytadat)
         data_list = []
         # get api data for each channel
         resp = get_report(yta,'channel==' + id, sd, ed, 'viewerPercentage',
