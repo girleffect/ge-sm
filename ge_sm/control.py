@@ -115,4 +115,16 @@ if __name__ == '__main__':
     print(yd, td, tm)
 
     # keep eye on month for now
-    main('2019-06-01', '2019-08-01', tm)
+    if not os.environ.get('DYNAMIC_DATES'):
+        main(
+            os.environ.get('START_DATE', '2019-06-01'),
+            os.environ.get('END_DATE', '2019-08-01'),
+            tm
+        )
+    else:
+        months = os.environ.get('REPORT_MONTHS', 2)
+        main(
+            today.replace(day=1).date().strftime('%Y-%m-%d'),
+            (today - relativedelta(months=months)).replace(day=1).strftime('%Y-%m-%d'),
+            tm
+        )

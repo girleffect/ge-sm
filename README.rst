@@ -1,6 +1,10 @@
 Required ENV Settings/Vars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+`START_DATE` defaults to `2019-06-01`
+`END_DATE` defaults to `2019-08-01`
+`REPORT_MONTHS` defaults to `2`
+
 RedShift
 ========
 
