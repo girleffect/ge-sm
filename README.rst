@@ -4,6 +4,7 @@ Required ENV Settings/Vars
 `START_DATE` defaults to `2019-06-01`
 `END_DATE` defaults to `2019-08-01`
 `REPORT_MONTHS` defaults to `2`
+`DYNAMIC_DATES` defaults to `null` determine whether to use the above dates or use today's date minus REPORT_MONTHS
 
 RedShift
 ========
