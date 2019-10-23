@@ -1,12 +1,11 @@
 channelsdict = {  
-	'****': {
-		'name': '****',
-		'analyticsdat': 'analytics_CJ.dat',
-		'playlist': '****',
-		'youtubedat': 'youtube_CJdat.dat'
-	}
+	'UCtFXX6FvFUxJBfvPxr7hgpg':
+	{'name': 'Chajaa',
+	 'analyticsdat': 'analytics_CJ.dat',
+	 'playlist': 'PLDRH9pqKNuVvaUH25upxIZ80zw1kcwKcx',
+	 'youtubedat': 'youtube_CJdat.dat'
+	 }
 }
-
 
 #Metric details
 std_metric_details = {'Views': ['views','1a','Metric'],
