@@ -52,19 +52,6 @@ def main(s, page_start, e):
     reportlist['yt_channels']['df'] = run_channel_report(post_start, e)
     reportlist['yt_demos']['df'] = run_demo_report(post_start, e)
     reportlist['yt_video']['df'] = run_video_report(post_start, e)
-    user_pages_dfs = construct_user_report(user_stdt, e, 'pages')
-
-    ## GA
-    reportlist['ga_user_pages_C']['df'] = user_pages_dfs['ga_user_pages_C']
-    reportlist['ga_user_pages_CK']['df'] = user_pages_dfs['ga_user_pages_CK']
-    reportlist['ga_user_pages_CW']['df'] = user_pages_dfs['ga_user_pages_CW']
-    reportlist['ga_user_pages_CKW']['df'] = user_pages_dfs['ga_user_pages_CKW']
-    user_events_dfs = construct_user_report(user_stdt, e, 'events')
-    reportlist['ga_user_events_C']['df'] = user_events_dfs['ga_user_events_C']
-    reportlist['ga_user_events_CK']['df'] = user_events_dfs['ga_user_events_CK']
-    reportlist['ga_user_events_CW']['df'] = user_events_dfs['ga_user_events_CW']
-    reportlist['ga_user_events_CKW']['df'] = user_events_dfs['ga_user_events_CKW']
-
     #
     # # # # Import kadence Id files
     df_kadence = pd.read_csv(pathname + 'common/Kadence_Ids.csv')
@@ -73,6 +60,19 @@ def main(s, page_start, e):
                                                         reportlist['ga_user_pages_CKW']['df'],
                                                         reportlist['ga_user_events_CK']['df'],
                                                         df_kadence)
+    # user_pages_dfs = construct_user_report(user_stdt, e, 'pages')
+
+    # ## GA
+    # reportlist['ga_user_pages_C']['df'] = user_pages_dfs['ga_user_pages_C']
+    # reportlist['ga_user_pages_CK']['df'] = user_pages_dfs['ga_user_pages_CK']
+    # reportlist['ga_user_pages_CW']['df'] = user_pages_dfs['ga_user_pages_CW']
+    # reportlist['ga_user_pages_CKW']['df'] = user_pages_dfs['ga_user_pages_CKW']
+    # user_events_dfs = construct_user_report(user_stdt, e, 'events')
+    # reportlist['ga_user_events_C']['df'] = user_events_dfs['ga_user_events_C']
+    # reportlist['ga_user_events_CK']['df'] = user_events_dfs['ga_user_events_CK']
+    # reportlist['ga_user_events_CW']['df'] = user_events_dfs['ga_user_events_CW']
+    # reportlist['ga_user_events_CKW']['df'] = user_events_dfs['ga_user_events_CKW']
+    #
 
 
     #
