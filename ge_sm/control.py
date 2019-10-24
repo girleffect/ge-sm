@@ -100,8 +100,11 @@ def main(s, page_start, e):
                 df = pd.concat([olddata_df, df], ignore_index = True, sort = False)
             print(df.to_string())
 
-            os.walk(os.path.dirname(pathname + data['outputcsvloc']), topdown=True)
+            os.makedirs(os.path.dirname(pathname + data['outputcsvloc']), exist_ok=True)
             # Export dataframe to csv
+            if not os.path.exists(pathname + data['outputcsvloc']):
+                open(pathname + data['outputcsvloc'], 'a').close()
+
             df.to_csv(pathname + data['outputcsvloc'], index = False)
             # Upload to data platform
             upload_with_pandas(df, data['tablename'])
