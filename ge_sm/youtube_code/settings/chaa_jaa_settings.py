@@ -1,4 +1,9 @@
-channelsdict = {  
+import json
+from pathlib import Path
+from ge_sm.common.secrets import *
+
+
+channelsdict = {
 	'UCtFXX6FvFUxJBfvPxr7hgpg':
 	{'name': 'Chajaa',
 	 'analyticsdat': 'analytics_CJ.dat',
@@ -25,3 +30,22 @@ std_metric_details = {'Views': ['views','1a','Metric'],
 
 vid_details = [('ChName','Channel name'), ('ChId', 'Channel ID'), ('video', 'Video Id'), 
 ('videoname','Video name'), ('videourl', 'URL'), ('videopub','Date published'), ('estimatedMinutesWatched', 'Est Minutes Watched')]
+
+
+secrets = {
+	"installed": {
+		"client_id": os.environ.get('YT_CLIENT_ID', ''),
+		"project_id": os.environ.get('YT_PROJECT_ID', ''),
+		"auth_uri": "https://accounts.google.com/o/oauth2/auth",
+		"token_uri": "https://oauth2.googleapis.com/token",
+		"auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+		"client_secret": os.environ.get('YT_CLIENT_SECRET', ''),
+		"redirect_uris": ["urn:ietf:wg:oauth:2.0:oob", "http://localhost"]
+	}
+}
+
+
+pathname = Path(__file__).parent.parent.parent
+with open(pathname / 'youtube_code/api_code/youtube_secrets_details.json', 'w') as f:
+	f.write(json.dumps(secrets))
+	f.close()
