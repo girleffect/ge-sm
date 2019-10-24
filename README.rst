@@ -60,6 +60,20 @@ Chaa jaa Facebook
 - `CHAA_JAA_ACCESS_TOKEN`
 
 
+Chaa jaaa YT
+============
+
+- `YT_CLIENT_ID`
+
+- `YT_CLIENT_SECRET`
+
+- `YT_PROJECT_ID`
+
+- `YT_CHANNEL`
+
+- `YT_PLAYLIST`
+
+
 Chaa jaaa GA
 ============
 
