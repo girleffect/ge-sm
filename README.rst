@@ -69,6 +69,10 @@ Chaa jaaa YT
 
 - `YT_PROJECT_ID`
 
+- `YT_CHANNEL`
+
+- `YT_PLAYLIST`
+
 
 Chaa jaaa GA
 ============

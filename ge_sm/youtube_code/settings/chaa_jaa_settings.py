@@ -4,12 +4,12 @@ from ge_sm.common.secrets import *
 
 
 channelsdict = {
-	'UCtFXX6FvFUxJBfvPxr7hgpg':
-	{'name': 'Chajaa',
-	 'analyticsdat': 'analytics_CJ.dat',
-	 'playlist': 'PLDRH9pqKNuVvaUH25upxIZ80zw1kcwKcx',
-	 'youtubedat': 'youtube_CJdat.dat'
-	 }
+	os.environ.get('YT_CHANNEL', ''): {
+		'name': 'Chajaa',
+		'analyticsdat': 'analytics_CJ.dat',
+		'playlist': os.environ.get('YT_PLAYLIST', ''),
+		'youtubedat': 'youtube_CJdat.dat'
+	}
 }
 
 #Metric details
