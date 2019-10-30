@@ -24,7 +24,8 @@ class YoutubeAnalyticsAPI:
 
     def initialize_analyticsreporting(self, analyticsdat):
         # Parse command-line arguments.
-        args = tools.argparser.parse_args()
+        args = tools.argparser.parse_args(
+            '--auth_host_name localhost --logging_level INFO --noauth_local_webserver'.split())
         # Set up a Flow object to be used if we need to authenticate.
         flow = client.flow_from_clientsecrets(self.secrets_path, scope = ' '.join(self.scopes),
                                               message=tools.message_if_missing(self.secrets_path))
