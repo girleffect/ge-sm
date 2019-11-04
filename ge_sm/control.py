@@ -54,9 +54,10 @@ def main(s, page_start, e):
     reportlist['yt_video']['df'] = run_video_report(post_start, e)
     #
     # # # # Import kadence Id files
-    df_kadence = pd.read_csv(pathname + 'common/Kadence_Ids.csv')
-    df_kadence.columns = ['KadenceId', 'Centre']
-    reportlist['ga_signed_up']['df'] = make_signedup_df(reportlist['ga_user_pages_CK']['df'],
+    if os.path.exists(pathname + '/Kadence_Ids.csv'):
+        df_kadence = pd.read_csv(pathname + '/Kadence_Ids.csv')
+        df_kadence.columns = ['KadenceId', 'Centre']
+        reportlist['ga_signed_up']['df'] = make_signedup_df(reportlist['ga_user_pages_CK']['df'],
                                                         reportlist['ga_user_pages_CKW']['df'],
                                                         reportlist['ga_user_events_CK']['df'],
                                                         df_kadence)
