@@ -11,18 +11,20 @@ except ImportError:
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('requirements.txt') as req_file:
-    requirements = req_file.read().split('\n')
-
-# with open('requirements-dev.txt') as req_file:
-#     requirements_dev = req_file.read().split('\n')
-
-with open('VERSION') as fp:
-    version = fp.read().strip()
-
+install_requires = [
+    'facebook_sdk==3.1.0',
+    'facebook_business==4.0.5',
+    'httplib2==0.13.1',
+    'pandas==0.25.1',
+    'SQLAlchemy==1.3.8',
+    'google_api_python_client==1.7.11',
+    'oauth2client==4.1.3',
+    'sqlalchemy-redshift==0.7.5',
+    'psycopg2'
+]
 setup(
     name='ge_sm',
-    version=version,
+    version='0.0.8',
     description="A python applications.",
     long_description=readme,
     author="Praekelt.org",
@@ -30,7 +32,7 @@ setup(
     packages=find_packages(),  # include all packages under src
 
     include_package_data=True,
-    install_requires=requirements,
+    install_requires=install_requires,
     license="BSD",
     zip_safe=False,
     keywords='ge_sm',
