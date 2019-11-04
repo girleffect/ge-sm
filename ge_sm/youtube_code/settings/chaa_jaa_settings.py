@@ -45,7 +45,7 @@ secrets = {
 }
 
 
-pathname = Path(__file__).parent.parent.parent
-with open(pathname / 'youtube_code/api_code/youtube_secrets_details.json', 'w') as f:
+pathname = Path(os.path.join(os.path.abspath('')))
+with open(pathname / 'youtube_secrets_details.json', 'w') as f:
 	f.write(json.dumps(secrets))
 	f.close()
