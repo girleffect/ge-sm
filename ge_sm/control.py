@@ -81,6 +81,7 @@ def main(s, page_start, e):
     # # # # # # # Loop over each element in report list
     for rpt, data in reportlist.items():
         # if rpt != 'fb_ads' and rpt != 'fb_posts' and rpt[:2] == 'fb':
+        if rpt[:2] == 'yt' or rpt[:2] == 'fb':
         # try:
             print(rpt)
             # First make table if need (normally keep commented out)
