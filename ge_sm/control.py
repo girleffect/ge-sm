@@ -55,7 +55,7 @@ def main(s, page_start, e):
     #
     # # # # Import kadence Id files
     if os.path.exists(pathname + '/Kadence_Ids.csv'):
-        df_kadence = pd.read_csv(pathname + 'common/Kadence_Ids.csv')
+        df_kadence = pd.read_csv(pathname + '/Kadence_Ids.csv')
         df_kadence.columns = ['KadenceId', 'Centre']
         reportlist['ga_signed_up']['df'] = make_signedup_df(reportlist['ga_user_pages_CK']['df'],
                                                         reportlist['ga_user_pages_CKW']['df'],
