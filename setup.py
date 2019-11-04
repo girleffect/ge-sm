@@ -19,10 +19,12 @@ install_requires = [
     'SQLAlchemy==1.3.8',
     'google_api_python_client==1.7.11',
     'oauth2client==4.1.3',
+    'sqlalchemy-redshift==0.7.5',
+    'psycopg2'
 ]
 setup(
     name='ge_sm',
-    version='0.0.6',
+    version='0.0.7',
     description="A python applications.",
     long_description=readme,
     author="Praekelt.org",
