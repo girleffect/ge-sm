@@ -10,7 +10,7 @@ channelsdict = {
 		'name': 'Chajaa',
 		'analyticsdat': 'analytics_CJ.dat',
 		'playlist': os.environ.get('YT_PLAYLIST', ''),
-		'youtubedat': pathname / 'youtube_CJdat.dat'
+		'youtubedat':  'youtube_CJdat.dat'
 	}
 }
 
