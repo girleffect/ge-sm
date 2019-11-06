@@ -15,7 +15,7 @@ class YoutubeAnalyticsAPI:
     by abstracting this away makes it easier to change the oauth2 flow in the future"""
     def __init__(self, scopes = ['https://www.googleapis.com/auth/yt-analytics.readonly'],
                  secrets_path = pathname / 'youtube_secrets_details.json',
-                 analyticsdat = 'YTanalytics.dat'):
+                 analyticsdat = pathname / 'YTanalytics.dat'):
         self.scopes = scopes
         self.secrets_path = secrets_path
         self.initialize_analyticsreporting(analyticsdat)
@@ -43,7 +43,7 @@ class YoutubeAPI:
     def __init__(self, scopes = ['https://www.googleapis.com/auth/youtube.readonly',
                                  'https://www.googleapis.com/auth/yt-analytics.readonly'],
                  secrets_path = pathname / 'youtube_secrets_details.json',
-                 youtubedat = 'youtubedat.dat'):
+                 youtubedat = pathname / 'youtubedat.dat'):
         self.scopes = scopes
         self.secrets_path = secrets_path
         self.initialize_apireporting(youtubedat)
