@@ -3,12 +3,14 @@ from pathlib import Path
 from ge_sm.common.secrets import *
 
 
+pathname = Path(os.path.join(os.path.abspath('')))
+
 channelsdict = {
 	os.environ.get('YT_CHANNEL', ''): {
 		'name': 'Chajaa',
 		'analyticsdat': 'analytics_CJ.dat',
 		'playlist': os.environ.get('YT_PLAYLIST', ''),
-		'youtubedat': 'youtube_CJdat.dat'
+		'youtubedat': pathname / 'youtube_CJdat.dat'
 	}
 }
 
@@ -93,7 +95,6 @@ yt_analytics = {
 	"_module": "oauth2client.client"
 }
 
-pathname = Path(os.path.join(os.path.abspath('')))
 with open(pathname / 'youtube_secrets_details.json', 'w') as f:
 	f.write(json.dumps(secrets))
 	f.close()
