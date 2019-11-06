@@ -68,6 +68,31 @@ yt = {
 	"_module": "oauth2client.client"
 }
 
+yt_analytics = {
+	"access_token": os.environ.get('YT_ANALYTICS_ACCESS_TOKEN'),
+	"client_id": os.environ.get('YT_ANALYTICS_CLIENT_ID'),
+	"client_secret": os.environ.get('YT_ANALYTICS_CLIENT_SECRET'),
+	"refresh_token": os.environ.get('YT_ANALYTICS_REFRESH_TOKEN'),
+	"token_expiry": os.environ.get('YT_ANALYTICS_TOKEN_EXPIRY'),
+	"token_uri": "https://oauth2.googleapis.com/token",
+	"user_agent": None,
+	"revoke_uri": "https://oauth2.googleapis.com/revoke",
+	"id_token": None,
+	"id_token_jwt": None,
+	"token_response": {
+		"access_token": os.environ.get('YT_ANALYTICS_RESPONSE_ACCESS_TOKEN'),
+		"expires_in": 3600,
+		"refresh_token": os.environ.get('YT_ANALYTICS_RESPONSE_REFRESH_TOKEN'),
+		"scope": "https://www.googleapis.com/auth/yt-analytics.readonly",
+		"token_type": "Bearer"
+	},
+	"scopes": ["https://www.googleapis.com/auth/yt-analytics.readonly"],
+	"token_info_uri": "https://oauth2.googleapis.com/tokeninfo",
+	"invalid": False,
+	"_class": "OAuth2Credentials",
+	"_module": "oauth2client.client"
+}
+
 pathname = Path(os.path.join(os.path.abspath('')))
 with open(pathname / 'youtube_secrets_details.json', 'w') as f:
 	f.write(json.dumps(secrets))
@@ -75,4 +100,8 @@ with open(pathname / 'youtube_secrets_details.json', 'w') as f:
 
 with open(pathname / 'youtube_CJdat.dat', 'w') as f:
 	f.write(json.dumps(yt))
+	f.close()
+
+with open(pathname / 'YTanalytics.dat', 'w') as f:
+	f.write(json.dumps(yt_analytics))
 	f.close()
