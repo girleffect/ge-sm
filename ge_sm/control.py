@@ -91,7 +91,7 @@ def main(s, page_start, e):
             if os.path.exists(pathname + data['outputcsvloc']):
                 shutil.copy2(pathname + data['outputcsvloc'], pathname +data['outputcsvloc'][:csvlen] + '_Old.csv')
             # # Delete all data from given table
-            delete_all_data(data['tablename'])
+            # delete_all_data(data['tablename'])
             # temp thing to sort out FB page issue on 3 months
             df = data['df']
             if data['FBPAGE'] == 'Yes' and os.path.exists(pathname + data['outputcsvloc']):
@@ -110,7 +110,7 @@ def main(s, page_start, e):
 
             df.to_csv(pathname + data['outputcsvloc'], index = False)
             # Upload to data platform
-            upload_with_pandas(df, data['tablename'])
+            # upload_with_pandas(df, data['tablename'])
             # except:
             #     pass
 
