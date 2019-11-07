@@ -94,7 +94,7 @@ def main(s, page_start, e):
             delete_all_data(data['tablename'])
             # temp thing to sort out FB page issue on 3 months
             df = data['df']
-            if data['FBPAGE'] == 'Yes':
+            if data['FBPAGE'] == 'Yes' and os.path.exists(pathname + data['outputcsvloc']):
                 # get historic data for this FB object
                 olddata_df = pd.read_csv(pathname + data['outputcsvloc'])
                 # knock out current month then merge with downloaded data
