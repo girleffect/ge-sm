@@ -17,7 +17,8 @@ from ge_sm.control_details import reportlist
 
 # put in path name for secrets et al as running from batch file
 upload_dir = 'ge_sm/sm-upload'
-pathname = os.path.join(os.path.abspath(''), upload_dir)
+path_dir = os.path.abspath('')
+pathname = os.path.join(path_dir, upload_dir)
 
 # from common.create_database_tables import update_monthly_table
 
