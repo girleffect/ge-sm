@@ -43,7 +43,7 @@ class YoutubeAPI:
     def __init__(self, scopes = ['https://www.googleapis.com/auth/youtube.readonly',
                                  'https://www.googleapis.com/auth/yt-analytics.readonly'],
                  secrets_path = pathname / 'youtube_secrets_details.json',
-                 youtubedat = pathname / 'youtubedat.dat'):
+                 youtubedat = pathname / 'YTanalytics.dat'):
         self.scopes = scopes
         self.secrets_path = secrets_path
         self.initialize_apireporting(youtubedat)
