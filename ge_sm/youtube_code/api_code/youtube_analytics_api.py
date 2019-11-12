@@ -9,6 +9,12 @@ from pathlib import Path
 pathname = Path(os.path.join(os.path.abspath('')))
 ########################
 
+# key = 'AIzaSyCl41ZyJ70G9C68DTa8Yo6a-gS1Z9Pxs-g'
+CLIENT_ID = os.environ.get('YT_ANALYTICS_CLIENT_ID')
+CLIENT_SECRET = os.environ.get('YT_ANALYTICS_CLIENT_SECRET')
+ACCESS_TOKEN = os.environ.get('YT_ANALYTICS_ACCESS_TOKEN')
+R_TOKEN = os.environ.get('YT_ANALYTICS_REFRESH_TOKEN')
+
 
 class YoutubeAnalyticsAPI:
     """Create a youtube analytics session using oauth2 flow
@@ -24,17 +30,11 @@ class YoutubeAnalyticsAPI:
         return f'{self.__class__.__name__}(scopes="{self.scopes}"", secrets_path="{self.secrets_path}"'
 
     def initialize_analyticsreporting(self, analyticsdat):
-        # Parse command-line arguments.
-        args = tools.argparser.parse_args(
-            '--auth_host_name localhost --logging_level INFO --noauth_local_webserver'.split())
-        # Set up a Flow object to be used if we need to authenticate.
-        flow = client.flow_from_clientsecrets(self.secrets_path, scope = ' '.join(self.scopes),
-                                              message=tools.message_if_missing(self.secrets_path))
-        storage = file.Storage(pathname / analyticsdat)
-        credentials = storage.get()
-        if credentials is None or credentials.invalid: credentials = tools.run_flow(flow, storage, args)
+        credentials = client.OAuth2Credentials(
+            ACCESS_TOKEN, CLIENT_ID, CLIENT_SECRET, R_TOKEN,
+            None, 'https://oauth2.googleapis.com/token', None)
         http = credentials.authorize(httplib2.Http())
-        self.analytics = build('youtubeAnalytics', 'v2', http = http)
+        self.analytics = build('youtubeAnalytics', 'v2', http=http)
 
 
 class YoutubeAPI:
@@ -53,15 +53,10 @@ class YoutubeAPI:
 
     def initialize_apireporting(self, youtubedat):
         # Parse command-line arguments.
-        args = tools.argparser.parse_args(
-            '--auth_host_name localhost --logging_level INFO --noauth_local_webserver'.split())
-        # Set up a Flow object to be used if we need to authenticate.
-        flow = client.flow_from_clientsecrets(self.secrets_path, scope = ' '.join(self.scopes),
-                                              message=tools.message_if_missing(self.secrets_path))
-        storage = file.Storage(pathname / youtubedat)
-        credentials = storage.get()
-        if credentials is None or credentials.invalid: credentials = tools.run_flow(flow, storage, args)
+        credentials = client.OAuth2Credentials(
+            ACCESS_TOKEN, CLIENT_ID, CLIENT_SECRET, R_TOKEN,
+            None, 'https://oauth2.googleapis.com/token', None)
         http = credentials.authorize(httplib2.Http())
-        self.reports = build('youtube', 'v3', http = http)
+        self.reports = build('youtube', 'v3', http=http)
 
 
