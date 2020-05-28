@@ -17,9 +17,8 @@ jobs:
       deploy:
         provider: pypi
         distributions: sdist bdist_wheel
-        user: praekelt.org
-        password:
-          secure: "TO0KydQmvfQuhWlmJpEJCfeBUuBVJcmJJHv7iUSwUoHwXoC4UIbTWVGMF9cO8wUrP4Y5RPRX7fxUJNMVJXwKO5VHCXwlA2s24e6IT6VbQPIFLCV4KXJBIoYtOWxGJgp7OB3VckT9rtTMwhwWFJjAfXNAs8yG4w8O98XwKn8w91Q5BcL4lcSX5j6HbPREqgdO5Uj4EL0tNwIqUfeUVrj5VTSWIELq5Buk95u9LwfiXob5z1KM3VbnW6jGv0MqfZ8/fd0d2BjxAXkDoehgcU+XJR1QSEcbYACq6+eljSw3FydX82FbbseGyCeSpKnUW1bGpReEM4xNuPLMcHgzbEabgDqese3iJz+qkgyQlz1lSJvSkDf+H82qONgSYPX7oYYUO2d2fp+g2+HZn2EP323fn3QjDlIHAzhOgbMLyHi4bUorPq2rtimKkW3NgFKvNxDO99BPe72sFIEvyTQWpKYCfcMjpU0BGXgkj2m3Dkt7QkqjMMAW4fAIYM1cQYfmVVNup5N3++Ma/Q7+O40tT8akNAdTU/0lSxdJDrcoQgd60pCGfnMqdQlOnOBebCabjTpvwlMDO/MKmvzDtZRDaIOuo6O5nOQ5K2tfXQLyxK1sI2r2s3hJ/C2Y0yQ8VL4umIK2cvIN86BRgHCLdowuRWNdxGgwD6mS2PQVw5SvwTag+jQ="
+        user: __token__
+        password: kGwd8+BW5AeWb368gpXYFJ+VytheTHrpFKPOglxV1HK535d5ZF1FutzqVian/OQGIriJ2ZuiJSSeIM8pq11Pg+b/ZyJi90QgilYBnNIbEyEZNlZ91oQtpN/YA1mcCw+GUMOb7eXmv2xhqFYA59Au3dqqEIUbjH4yhItwy8iZ+zjTEZGru4k9C08g+/3NXxD7ZNUI42ZpQ8CpLXqZcJqG693u8WYQIK7neu3oV6CS8py628R+UkO0hBM+R/9sJdkC/9xdfxqZ8EUHdNYwtRTu5cpkZWq5rjXI8NDH4tpK3jO9q+30Nlw/98snUZkNCBTYW3F0QqorzorH8moMRcK2YH0Eu7Ddb/tHddbCMLlKvLuMYY2z2PstfUURlY3p7W1S27smSyFZPTEUd/VlGYU6ZpszRaYQNYZNaqrFT7MhwkNflRozExZrqw8bEgQZgFRFtbfQ5wgBWgEIYIRg/doKpmfNZnfNhBxYzq16N+bnIZremMmV1sH9liaPDLH8lwGtM07FdfwI+SBxjtekktzt1IKHVODUVKUeQjYgoxssMd85s7nWZGmcEuioGnAXl8gZTPdoBPcn8+sjlVjNVUXrB7RL9bWHWHlEih1Ri2u/DJ0rjSxHKbReSnWlNp47jGg/9LGy/NzHnZVqhh4hSiB2KcQUvS5KyHS+h2vpeBz1naI=
         on:
           tags: true
           all_branches: true

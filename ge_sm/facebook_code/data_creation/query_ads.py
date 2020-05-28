@@ -120,7 +120,10 @@ def construct_ad_data(stdate, eddate):
     compaigns = {}
     # get some properties of each campaign
     for c in campaign_objs:
-        compaigns[c['id']] = (c['name'], c['status'], c['start_time'],c['stop_time'])
+        if len(c) > 4:
+            compaigns[c['id']] = (c['name'], c['status'], c['start_time'],c['stop_time'])
+        else:
+            compaigns[c['id']] = (c['name'], c['status'], c['start_time'])
 
     # get all adsets for this ad account
     alladsets = [adset for adset in acc.get_ad_sets(fields = ad_field_list)]

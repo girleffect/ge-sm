@@ -1,3 +1,4 @@
+import os
 import argparse
 from oauth2client import client, file, tools
 from googleapiclient.discovery import build
@@ -5,7 +6,7 @@ from httplib2 import Http
 from pathlib import Path
 # put in path name for secrets et al as running from batch file
 ########################
-pathname = Path(__file__).parent.parent.parent
+pathname = Path(os.path.join(os.path.abspath('')))
 ########################
 
 
@@ -13,7 +14,7 @@ class GoogleAnalyticsAPI:
     """Create a google analytics session using oauth2 flow
     by abstracting this away makes it easier to change the oauth2 flow in the future"""
     def __init__(self, scopes = ['https://www.googleapis.com/auth/analytics.readonly'],
-                 secrets_path = pathname / 'google_analytics_code/api_code/google_analytics_secrets_details.json',
+                 secrets_path = pathname / 'google_analytics_secrets_details.json',
                  discovery_uri = ('https://analyticsreporting.googleapis.com/$discovery/rest')):
         self.scopes = scopes
         self.secrets_path = secrets_path

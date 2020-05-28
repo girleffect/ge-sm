@@ -2,8 +2,11 @@ Required ENV Settings/Vars
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `START_DATE` defaults to `2019-06-01`
+
 `END_DATE` defaults to `2019-08-01`
+
 `REPORT_MONTHS` defaults to `2`
+
 `DYNAMIC_DATES` defaults to `null` determine whether to use the above dates or use today's date minus REPORT_MONTHS
 
 RedShift
@@ -72,6 +75,38 @@ Chaa jaaa YT
 - `YT_CHANNEL`
 
 - `YT_PLAYLIST`
+
+
+Obtained from the youtube .dat file
+
+- `YOUTUBE_ACCESS_TOKEN`
+
+- `YOUTUBE_CLIENT_ID`
+
+- `YOUTUBE_CLIENT_SECRET`
+
+- `YOUTUBE_REFRESH_TOKEN`
+
+- `YOUTUBE_TOKEN_EXPIRY`
+
+- `YOUTUBE_TOKEN_RESPONSE_ACCESS_TOKEN`
+
+
+Obtained from the YTanalytics .dat file
+
+`YT_ANALYTICS_ACCESS_TOKEN`
+
+`YT_ANALYTICS_CLIENT_ID`
+
+`YT_ANALYTICS_CLIENT_SECRET`
+
+`YT_ANALYTICS_REFRESH_TOKEN`
+
+`YT_ANALYTICS_TOKEN_EXPIRY`
+
+`YT_ANALYTICS_RESPONSE_ACCESS_TOKEN`
+
+`YT_ANALYTICS_RESPONSE_REFRESH_TOKEN`
 
 
 Chaa jaaa GA

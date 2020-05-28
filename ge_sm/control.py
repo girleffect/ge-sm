@@ -17,7 +17,8 @@ from ge_sm.control_details import reportlist
 
 # put in path name for secrets et al as running from batch file
 upload_dir = 'ge_sm/sm-upload'
-pathname = os.path.join(os.path.abspath(''), upload_dir)
+path_dir = os.path.abspath('')
+pathname = os.path.join(path_dir, upload_dir)
 
 # from common.create_database_tables import update_monthly_table
 
@@ -54,12 +55,14 @@ def main(s, page_start, e):
     reportlist['yt_video']['df'] = run_video_report(post_start, e)
     #
     # # # # Import kadence Id files
-    df_kadence = pd.read_csv(pathname + 'common/Kadence_Ids.csv')
-    df_kadence.columns = ['KadenceId', 'Centre']
-    reportlist['ga_signed_up']['df'] = make_signedup_df(reportlist['ga_user_pages_CK']['df'],
-                                                        reportlist['ga_user_pages_CKW']['df'],
-                                                        reportlist['ga_user_events_CK']['df'],
-                                                        df_kadence)
+    # cancelled it no longer needed
+    # if os.path.exists(pathname + '/Kadence_Ids.csv'):
+    #     df_kadence = pd.read_csv(pathname + '/Kadence_Ids.csv')
+    #     df_kadence.columns = ['KadenceId', 'Centre']
+    #     reportlist['ga_signed_up']['df'] = make_signedup_df(reportlist['ga_user_pages_CK']['df'],
+    #                                                     reportlist['ga_user_pages_CKW']['df'],
+    #                                                     reportlist['ga_user_events_CK']['df'],
+    #                                                     df_kadence)
     # user_pages_dfs = construct_user_report(user_stdt, e, 'pages')
 
     # ## GA
@@ -79,6 +82,7 @@ def main(s, page_start, e):
     # # # # # # # Loop over each element in report list
     for rpt, data in reportlist.items():
         # if rpt != 'fb_ads' and rpt != 'fb_posts' and rpt[:2] == 'fb':
+        if rpt[:2] == 'yt' or rpt[:2] == 'fb':
         # try:
             print(rpt)
             # First make table if need (normally keep commented out)
@@ -88,10 +92,10 @@ def main(s, page_start, e):
             if os.path.exists(pathname + data['outputcsvloc']):
                 shutil.copy2(pathname + data['outputcsvloc'], pathname +data['outputcsvloc'][:csvlen] + '_Old.csv')
             # # Delete all data from given table
-            delete_all_data(data['tablename'])
+            # delete_all_data(data['tablename'])
             # temp thing to sort out FB page issue on 3 months
             df = data['df']
-            if data['FBPAGE'] == 'Yes':
+            if data['FBPAGE'] == 'Yes' and os.path.exists(pathname + data['outputcsvloc']):
                 # get historic data for this FB object
                 olddata_df = pd.read_csv(pathname + data['outputcsvloc'])
                 # knock out current month then merge with downloaded data
@@ -107,7 +111,7 @@ def main(s, page_start, e):
 
             df.to_csv(pathname + data['outputcsvloc'], index = False)
             # Upload to data platform
-            upload_with_pandas(df, data['tablename'])
+            # upload_with_pandas(df, data['tablename'])
             # except:
             #     pass
 
