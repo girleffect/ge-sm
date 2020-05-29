@@ -24,7 +24,7 @@ install_requires = [
 ]
 setup(
     name='ge_sm',
-    version='0.0.17',
+    version='0.0.18',
     description="A python applications.",
     long_description=readme,
     author="Praekelt.org",
