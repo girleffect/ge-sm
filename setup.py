@@ -13,7 +13,7 @@ with open('README.rst') as readme_file:
 
 install_requires = [
     'facebook_sdk==3.1.0',
-    'facebook_business==4.0.5',
+    'facebook_business==6.0.4',
     'httplib2==0.13.1',
     'pandas==0.25.1',
     'SQLAlchemy==1.3.8',
@@ -24,7 +24,7 @@ install_requires = [
 ]
 setup(
     name='ge_sm',
-    version='0.0.17',
+    version='0.0.18',
     description="A python applications.",
     long_description=readme,
     author="Praekelt.org",
